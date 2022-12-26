@@ -1,0 +1,26 @@
+11:01:31 **** Incremental Build of configuration Debug for project 001hellowWorld ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:29:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   29 |  printf("Hello Sunil\n");
+      |  ^~~~~~
+../Src/main.c:29:2: warning: incompatible implicit declaration of built-in function 'printf'
+../Src/main.c:20:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   19 | #include <stdint.h>
+  +++ |+#include <stdio.h>
+   20 | 
+arm-none-eabi-gcc -o "001hellowWorld.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Sunil\Projects\Projects_2023\BareMatel\STM32F407G-DISK1\Resources\01-Day\001hellowWorld\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="001hellowWorld.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 001hellowWorld.elf
+ 
+arm-none-eabi-size   001hellowWorld.elf 
+arm-none-eabi-objdump -h -S  001hellowWorld.elf  > "001hellowWorld.list"
+   text	   data	    bss	    dec	    hex	filename
+   3764	    108	   1588	   5460	   1554	001hellowWorld.elf
+Finished building: default.size.stdout
+ 
+Finished building: 001hellowWorld.list
+ 
+
+11:01:32 Build Finished. 0 errors, 2 warnings. (took 632ms)
+
